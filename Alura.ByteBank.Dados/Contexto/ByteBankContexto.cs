@@ -14,10 +14,16 @@ namespace Alura.ByteBank.Dados.Contexto
         //Adicionado comentário pra teste de Commit no Git!
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string stringconexao = "server=localhost;" +
-                                   "DataBase=bytebankbd_webapp;Uid=root;Pwd=gd@1234S";
-            optionsBuilder.UseMySql(stringconexao, 
-                                    ServerVersion.AutoDetect(stringconexao));
+            //String Local
+            //string stringconexao = "server=localhost;" +
+            //                       "DataBase=bytebankbd_webapp;Uid=root;Pwd=gd@1234S";
+
+            //String Azure
+            string stringconexao = "Server=bytebank.mysql.database.azure.com; Port=3306; " +
+                                   "Database=bytebankbd_webapp; Uid=gabriel@bytebank; Pwd=gd@1234S;" +
+                                   "SslMode=Preferred;";
+
+            optionsBuilder.UseMySql(stringconexao, ServerVersion.AutoDetect(stringconexao));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
