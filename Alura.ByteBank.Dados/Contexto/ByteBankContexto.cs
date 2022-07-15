@@ -11,7 +11,6 @@ namespace Alura.ByteBank.Dados.Contexto
         public DbSet<Agencia> Agencias { get; set; }
         public DbSet<UsuarioApp> Usuarios { get; set; }
 
-        //Adicionado comentário pra teste de Commit no Git!
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //String Local
